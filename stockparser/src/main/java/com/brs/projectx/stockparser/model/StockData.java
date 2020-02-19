@@ -1,5 +1,6 @@
 package com.brs.projectx.stockparser.model;
 
+
 public class StockData {
 
 	String name;
@@ -9,7 +10,7 @@ public class StockData {
 	float marketCap;
 	float averageVolume;
 	float volume;
-	String WeekRange;
+	String weekRange;
 	public String getName() {
 		return name;
 	}
@@ -53,16 +54,16 @@ public class StockData {
 		this.volume = volume;
 	}
 	public String getWeekRange() {
-		return WeekRange;
+		return weekRange;
 	}
 	public void setWeekRange(String weekRange) {
-		WeekRange = weekRange;
+		this.weekRange = weekRange;
 	}
 	@Override
 	public String toString() {
 		return "StockData [name=" + name + ", prices=" + prices + ", change=" + change + ", percentageChange="
 				+ percentageChange + ", marketCap=" + marketCap + ", averageVolume=" + averageVolume + ", volume="
-				+ volume + ", WeekRange=" + WeekRange + "]";
+				+ volume + ", WeekRange=" + weekRange + "]";
 	}
 	
 	
