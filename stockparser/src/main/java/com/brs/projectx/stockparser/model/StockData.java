@@ -4,12 +4,12 @@ package com.brs.projectx.stockparser.model;
 public class StockData {
 
 	String name;
-	float prices;
-	float change;
-	float percentageChange;
-	float marketCap;
-	float averageVolume;
-	float volume;
+	String prices;
+	String change;
+	String percentageChange;
+	String marketCap;
+	String averageVolume;
+	String volume;
 	String weekRange;
 	public String getName() {
 		return name;
@@ -17,40 +17,40 @@ public class StockData {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public float getPrices() {
+	public String getPrices() {
 		return prices;
 	}
-	public void setPrices(float prices) {
-		this.prices = prices;
+	public void setPrices(String fields) {
+		this.prices = fields;
 	}
-	public float getChange() {
+	public String getChange() {
 		return change;
 	}
-	public void setChange(float change) {
+	public void setChange(String change) {
 		this.change = change;
 	}
-	public float getPercentageChange() {
+	public String getPercentageChange() {
 		return percentageChange;
 	}
-	public void setPercentageChange(float percentageChange) {
+	public void setPercentageChange(String percentageChange) {
 		this.percentageChange = percentageChange;
 	}
-	public float getMarketCap() {
+	public String getMarketCap() {
 		return marketCap;
 	}
-	public void setMarketCap(float marketCap) {
+	public void setMarketCap(String marketCap) {
 		this.marketCap = marketCap;
 	}
-	public float getAverageVolume() {
+	public String getAverageVolume() {
 		return averageVolume;
 	}
-	public void setAverageVolume(float averageVolume) {
+	public void setAverageVolume(String averageVolume) {
 		this.averageVolume = averageVolume;
 	}
-	public float getVolume() {
+	public String getVolume() {
 		return volume;
 	}
-	public void setVolume(float volume) {
+	public void setVolume(String volume) {
 		this.volume = volume;
 	}
 	public String getWeekRange() {
