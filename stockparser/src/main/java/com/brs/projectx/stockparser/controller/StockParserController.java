@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brs.projectx.stockparser.model.StockData;
+import com.brs.projectx.stockparser.service.JavaScraperService;
 import com.brs.projectx.stockparser.service.StockParserService;
 
 import redis.clients.jedis.Jedis;
@@ -21,6 +22,9 @@ public class StockParserController {
 	
 	@Autowired
 	StockParserService stockParserService;
+	
+	@Autowired
+	JavaScraperService javaScraperService;
 
 	private Jedis jedis = new Jedis("localhost");;
 
@@ -105,8 +109,9 @@ public class StockParserController {
 	@RequestMapping("/addData")
 	public List<StockData> readCSV() throws IOException {
 
+		javaScraperService.updateStockCSVTable();
 		List<StockData> list = new ArrayList<>();
-		BufferedReader br = new BufferedReader(new FileReader("src/main/resources/output.csv"));
+		BufferedReader br = new BufferedReader(new FileReader("src/main/resources/output1.csv"));
 		String line;
 		br.readLine();
 		while ((line = br.readLine()) != null) {
@@ -126,5 +131,11 @@ public class StockParserController {
 		br.close();
 		return list;
 	}
-
+	
+	@RequestMapping("/test")
+	public void test()
+	{
+		
+		javaScraperService.updateStockCSVTable();
+	}
 }
