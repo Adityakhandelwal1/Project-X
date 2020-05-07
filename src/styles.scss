@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-material.css";
+
+// $primary: rgb(111, 0, 255);
+$primary: black;
+
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+span {
+    font-weight: bold;
+    background: lightgray;
+    padding: .3em .8em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.play-container {
+    padding: 2em;
+    border: 1px solid lightgray;
+    margin-bottom: 1em;
+
+    input {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+.logo{
+    color: black;
+    font: 1em sans-serif;
+    padding: .4em;
+    background-color: white;
+}
+header {
+    background: $primary;
+    padding: 1em 0;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a.logo {
+        font-weight: bold;
+    }
+
+    nav {
+        float: right;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+
+            li a{
+                padding: 1em;
+
+                &:hover {
+                    background: darken(white, 70%);
+                }
+            }
+        }
+    }
+}
+
