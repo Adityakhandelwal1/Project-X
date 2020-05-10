@@ -53,11 +53,12 @@ public class JavaScraperService {
 	private String convertCommaToDot(String string)
 	{
 		String replacedString = string;
-		for(int i = 0; i < string.length(); i++)
+		for(int i = string.length()-1; i >=0 ; i--)
 		{
 			if(string.charAt(i) == ',')
 			{
-				replacedString = string.substring(0, i) + '.' + string.substring(i+1);
+				replacedString = string.substring(0,i) + '.' + string.substring(i+1);
+				break;
 			}
 		}
 		return replacedString;
@@ -137,6 +138,11 @@ public class JavaScraperService {
 					tableElementString = convertCommaToDot(tableBodyElements.get(i+2).text());
 				else if(check==7)
 					tableElementString = convertCommaToDot(tableBodyElements.get(i-2).text());
+				else if(check==2) {
+					tableElementString = removeDots(tableBodyElements.get(i).text());
+					tableElementString = convertCommaToDot(tableElementString);
+				}
+				
 				else
 					tableElementString = convertCommaToDot(tableBodyElements.get(i).text());
 				try {
@@ -175,6 +181,19 @@ public class JavaScraperService {
 		newPageElements = document.select("td");
 		document = null;
 		return newPageElements.get(11).text();
+	}
+	private String removeDots(String string)
+	{
+		String replacedString = string;
+		for(int i = 0; i <string.length() ; i++)
+		{
+			if(string.charAt(i) == '.')
+			{
+				replacedString = string.substring(0,i) + string.substring(i+1);
+				break;
+			}
+		}
+		return replacedString;
 	}
 }
 
