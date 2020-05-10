@@ -1,0 +1,28 @@
+<h1>Stocks which changed more than 5 %</h1>
+
+<div class="play-container">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Prices</th>
+            <th>Change</th>
+            <th>Percentage Change</th>
+            <th>Market Cap</th>
+            <th>Average Volume</th>
+            <th>Volume</th>
+            <th>52 Week Range</th>
+        </tr>
+        <tbody>
+            <tr *ngFor = "let data of stockdata">
+                <td> {{data.name}}</td>
+                <td> {{data.prices}}</td>
+                <td> {{data.change}}</td>
+                <td> {{data.percentageChange}}</td>
+                <td> {{data.marketCap}}</td>
+                <td> {{data.averageVolume}}</td>
+                <td> {{data.volume}}</td>
+                <td> {{data.weekRange}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
